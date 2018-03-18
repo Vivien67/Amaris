@@ -1,0 +1,30 @@
+﻿<Window x:Class="ParkPrice.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ParkPrice"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="Park Prices" Height="288" Width="351" ResizeMode="NoResize">
+
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="257" VerticalAlignment="Top" Width="347" RenderTransformOrigin="0.355,0.524" Margin="0,0,-4,0">
+            <Label Content="Durée de stationnement" HorizontalAlignment="Left" Margin="167,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="3.25,5.327" ScrollViewer.HorizontalScrollBarVisibility="Auto" Height="26" Width="302" FontWeight="Bold"/>
+            <TextBox x:Name="HourTextBox" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Height="23" Margin="167,77,0,0" TextWrapping="Wrap"   Text="{Binding Path=Hours}" VerticalAlignment="Top" Width="40" />
+            <TextBox x:Name="MinuteTextBox" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Height="23" Margin="255,77,0,0" TextWrapping="Wrap" Text="{Binding Path=Minutes}" VerticalAlignment="Top" Width="40"/>
+            <ComboBox  x:Name="ParkRateListBox" ItemsSource="{Binding Source={local:EnumBindingSource {x:Type local:EparkRate}}}" SelectedItem="{Binding Path=ParkRate}"  HorizontalAlignment="Left" Height="23" Margin="167,134,0,0" VerticalAlignment="Top" Width="158"/>
+
+
+            <Button x:Name="CalculateButton" Content="Calculer le prix" HorizontalAlignment="Left" Margin="215,186,0,0" VerticalAlignment="Top" Width="110" Click="Button_Click"/>
+            <Label x:Name="labelPrice" Content="" HorizontalAlignment="Center" Margin="171,214,10,0" VerticalAlignment="Top" FontWeight="Bold" FontStyle="Italic" FontSize="18" Width="166" HorizontalContentAlignment="Right"/>
+            <Image HorizontalAlignment="Left" Height="100" Margin="0,10,0,0" VerticalAlignment="Top" Width="100" Source="pack://siteoforigin:,,,/Resources/logostatdemtl.png" Stretch="Fill"/>
+            <Label Content="Forfait" HorizontalAlignment="Left" Margin="167,103,0,0" VerticalAlignment="Top" FontWeight="Bold"/>
+            <Label Content="H" HorizontalAlignment="Left" Margin="215,77,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.789,0.5"/>
+            <Label Content="min" HorizontalAlignment="Left" Margin="306,77,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.789,0.5"/>
+            <TextBox x:Name="DaysTextBox" PreviewTextInput="NumberValidationTextBox" HorizontalAlignment="Left" Height="23" Margin="167,41,0,0" TextWrapping="Wrap"   Text="{Binding Days}" VerticalAlignment="Top" Width="40" />
+            <Label Content="Jour(s)" HorizontalAlignment="Left" Margin="225,41,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.789,0.5"/>
+        </Grid>
+
+    </Grid>
+</Window>
